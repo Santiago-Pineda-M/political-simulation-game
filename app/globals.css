@@ -1,0 +1,421 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Retro 8-bit color palette */
+  --retro-black: #000000;
+  --retro-dark: #222034;
+  --retro-purple: #5e2d79;
+  --retro-blue: #2b5ea6;
+  --retro-green: #3b9c3b;
+  --retro-yellow: #e6b800;
+  --retro-orange: #d94f1f;
+  --retro-red: #a6231f;
+  --retro-white: #ffffff;
+  --retro-gray: #9badb7;
+  --retro-light: #d4e4ed;
+
+  --game-primary: var(--retro-blue);
+  --game-secondary: var(--retro-red);
+  --game-accent: var(--retro-green);
+  --game-neutral: var(--retro-light);
+  --game-dark: var(--retro-dark);
+  --game-text: var(--retro-white);
+  --game-bg: var(--retro-black);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  /* Added Press Start 2P pixel font */
+  --font-pixel: "Press Start 2P", monospace;
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  /* Added retro color tokens */
+  --color-retro-black: var(--retro-black);
+  --color-retro-dark: var(--retro-dark);
+  --color-retro-purple: var(--retro-purple);
+  --color-retro-blue: var(--retro-blue);
+  --color-retro-green: var(--retro-green);
+  --color-retro-yellow: var(--retro-yellow);
+  --color-retro-orange: var(--retro-orange);
+  --color-retro-red: var(--retro-red);
+  --color-retro-white: var(--retro-white);
+  --color-retro-gray: var(--retro-gray);
+  --color-retro-light: var(--retro-light);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Retro 8-bit component classes and animations */
+@layer components {
+  .game-bg {
+    @apply relative w-full max-w-6xl mx-auto overflow-hidden;
+    aspect-ratio: 16 / 9;
+    background: var(--game-bg);
+    border: 8px solid var(--retro-black);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.5);
+    image-rendering: pixelated;
+  }
+
+  .game-bg::before {
+    content: "";
+    @apply absolute inset-0 opacity-20 pointer-events-none z-10;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px
+    );
+    animation: scanlines 6s linear infinite;
+  }
+
+  .node-image {
+    @apply absolute inset-0 w-full h-full object-cover opacity-90;
+    image-rendering: pixelated;
+    filter: brightness(0.9) contrast(1.1);
+    transition: opacity 0.6s ease-in-out;
+  }
+
+  .text-box {
+    @apply absolute bottom-8 left-8 right-8 bg-retro-black/90 p-6 border-4 border-retro-purple text-retro-white text-sm leading-relaxed tracking-wider;
+    box-shadow: 8px 8px 0 var(--retro-purple);
+    max-height: 40%;
+    overflow-y: auto;
+    animation: fadeInUp 0.5s ease-out;
+  }
+
+  .choice-btn {
+    @apply block w-full mb-3 px-6 py-4 text-left font-bold bg-retro-blue text-retro-white border-4 border-retro-dark transition-all duration-200 cursor-pointer;
+    box-shadow: 6px 6px 0 var(--retro-dark);
+    image-rendering: pixelated;
+  }
+
+  .choice-btn:hover {
+    @apply bg-retro-purple border-retro-yellow scale-105;
+    animation: buttonWiggle 0.3s ease-in-out;
+  }
+
+  .choice-btn:active {
+    @apply scale-95 bg-retro-red;
+  }
+
+  .stats-bar {
+    @apply fixed top-0 left-0 right-0 bg-retro-black text-retro-white flex justify-around items-center p-3 border-b-4 border-retro-purple z-50 text-xs;
+    font-family: "Press Start 2P", monospace;
+  }
+
+  .stat-fill {
+    @apply h-full transition-all duration-500;
+  }
+
+  .stat-pop {
+    @apply bg-retro-red;
+  }
+
+  .stat-der {
+    @apply bg-retro-blue;
+  }
+
+  .stat-eco {
+    @apply bg-retro-green;
+  }
+
+  .stat-est {
+    @apply bg-retro-yellow;
+  }
+
+  .ending-screen {
+    @apply absolute inset-0 flex flex-col items-center justify-center p-10 bg-gradient-to-b from-retro-black to-retro-dark;
+    animation: fadeIn 1s ease-out;
+  }
+
+  .ending-title {
+    @apply text-3xl md:text-5xl font-bold text-retro-yellow mb-6;
+    font-family: "Press Start 2P", monospace;
+    text-shadow: 4px 4px 0 var(--retro-red);
+    animation: bounceIn 0.8s ease-out;
+  }
+
+  .menu-card {
+    @apply bg-retro-black border-8 border-retro-yellow p-10 text-center max-w-md w-full;
+    box-shadow: 12px 12px 0 var(--retro-purple);
+    animation: slideDown 0.6s ease-out;
+  }
+
+  .menu-title {
+    @apply text-4xl font-bold text-retro-yellow mb-8;
+    font-family: "Press Start 2P", monospace;
+    text-shadow: 5px 5px 0 var(--retro-red);
+    animation: glitch 2s infinite;
+  }
+
+  .retro-input {
+    @apply w-full px-4 py-3 bg-retro-dark text-retro-white border-4 border-retro-purple font-bold text-center mb-4;
+    font-family: "Press Start 2P", monospace;
+    font-size: 0.75rem;
+  }
+
+  .retro-input:focus {
+    @apply border-retro-yellow outline-none;
+  }
+
+  .retro-btn {
+    @apply px-6 py-4 font-bold bg-retro-blue text-retro-white border-4 border-retro-dark transition-all duration-200 cursor-pointer;
+    font-family: "Press Start 2P", monospace;
+    box-shadow: 6px 6px 0 var(--retro-dark);
+    font-size: 0.75rem;
+  }
+
+  .retro-btn:hover {
+    @apply bg-retro-purple border-retro-yellow scale-105;
+  }
+
+  .retro-btn:active {
+    @apply scale-95 bg-retro-red;
+  }
+
+  .retro-btn-secondary {
+    @apply px-6 py-4 font-bold bg-retro-dark text-retro-white border-4 border-retro-purple transition-all duration-200 cursor-pointer;
+    font-family: "Press Start 2P", monospace;
+    box-shadow: 6px 6px 0 var(--retro-purple);
+    font-size: 0.75rem;
+  }
+
+  .retro-btn-secondary:hover {
+    @apply bg-retro-purple border-retro-yellow scale-105;
+  }
+
+  .pixel-perfect {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  .crt-effect::after {
+    content: "";
+    @apply absolute inset-0 pointer-events-none;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    animation: scanlines 8s linear infinite;
+  }
+}
+
+/* Retro animations */
+@keyframes scanlines {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes buttonWiggle {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1.05);
+  }
+  25% {
+    transform: rotate(-2deg) scale(1.05);
+  }
+  75% {
+    transform: rotate(2deg) scale(1.05);
+  }
+}
+
+@keyframes glitch {
+  0%,
+  90%,
+  100% {
+    transform: translate(0);
+  }
+  92% {
+    transform: translate(-2px, 2px);
+  }
+  94% {
+    transform: translate(2px, -2px);
+  }
+  96% {
+    transform: translate(-2px, -2px);
+  }
+  98% {
+    transform: translate(2px, 2px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-50px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "inicio": {
+    "id": "inicio",
+    "text": "Hoy {lider} asume la presidencia de {pais}, un país joven que busca equilibrio entre justicia social y crecimiento económico. Desde la ventana del palacio se ve la capital iluminada por la esperanza.",
+    "background": "palace_morning.jpg",
+    "choices": [
+      {
+        "text": "Prometer una nueva era de transparencia y derechos humanos.",
+        "next": "gabinete",
+        "effects": { "popularidad": 5, "derechos": 5, "economia": 0, "estabilidad": 2 }
+      },
+      {
+        "text": "Prometer crecimiento económico rápido y seguridad.",
+        "next": "gabinete",
+        "effects": { "popularidad": 3, "derechos": -2, "economia": 4, "estabilidad": 3 }
+      }
+    ]
+  },
+  "gabinete": {
+    "id": "gabinete",
+    "text": "Es momento de formar tu gabinete. Los pasillos del palacio están llenos de aspirantes y asesores. {lider} debe decidir qué tipo de personas dirigirán {pais}.",
+    "background": "palace_hall.jpg",
+    "choices": [
+      {
+        "text": "Nombrar expertos independientes comprometidos con los derechos humanos.",
+        "next": "presupuesto",
+        "effects": { "derechos": 5, "popularidad": 3, "economia": -1, "estabilidad": 2 }
+      },
+      {
+        "text": "Nombrar aliados políticos leales, aunque polémicos.",
+        "next": "presupuesto",
+        "effects": { "derechos": -3, "popularidad": 2, "economia": 1, "estabilidad": -1 }
+      }
+    ]
+  },
+  "presupuesto": {
+    "id": "presupuesto",
+    "text": "El primer gran debate de tu administración: ¿cómo distribuir el presupuesto nacional?",
+    "background": "parliament_day.jpg",
+    "choices": [
+      {
+        "text": "Aumentar inversión en educación y salud.",
+        "next": "medios",
+        "effects": { "derechos": 4, "economia": -1, "popularidad": 3, "estabilidad": 2 }
+      },
+      {
+        "text": "Incrementar el gasto militar para asegurar el orden interno.",
+        "next": "medios",
+        "effects": { "derechos": -4, "economia": 0, "popularidad": 2, "estabilidad": 3 }
+      },
+      {
+        "text": "Reducir impuestos a empresas para impulsar la economía.",
+        "next": "medios",
+        "effects": { "derechos": -1, "economia": 4, "popularidad": 2, "estabilidad": 1 }
+      }
+    ]
+  },
+  "medios": {
+    "id": "medios",
+    "text": "Los medios de comunicación comienzan a criticar algunas decisiones. Tus asesores proponen medidas de control informativo.",
+    "background": "office_evening.jpg",
+    "choices": [
+      {
+        "text": "Defender la libertad de prensa como principio innegociable.",
+        "next": "crisis_social",
+        "effects": { "derechos": 5, "popularidad": 2, "estabilidad": -1, "economia": 0 }
+      },
+      {
+        "text": "Regular los medios para evitar 'noticias falsas'.",
+        "next": "crisis_social",
+        "effects": { "derechos": -3, "popularidad": 1, "estabilidad": 3, "economia": 0 }
+      },
+      {
+        "text": "Cerrar medios opositores bajo pretexto de seguridad nacional.",
+        "next": "crisis_social",
+        "effects": { "derechos": -6, "popularidad": -2, "estabilidad": 4, "economia": 0 }
+      }
+    ]
+  },
+  "crisis_social": {
+    "id": "crisis_social",
+    "text": "Un grupo de manifestantes exige justicia por abusos policiales. Las imágenes se extienden por todo {pais}. La tensión social crece.",
+    "background": "protests.jpg",
+    "choices": [
+      {
+        "text": "Iniciar una investigación independiente y dialogar con los líderes.",
+        "next": "reformas",
+        "effects": { "derechos": 6, "popularidad": 3, "estabilidad": -2, "economia": 0 }
+      },
+      {
+        "text": "Ordenar una intervención policial firme.",
+        "next": "reformas",
+        "effects": { "derechos": -4, "popularidad": -1, "estabilidad": 3, "economia": 0 }
+      },
+      {
+        "text": "Ignorar las protestas y seguir con el plan de gobierno.",
+        "next": "reformas",
+        "effects": { "derechos": -2, "popularidad": -3, "estabilidad": -2, "economia": 1 }
+      }
+    ]
+  },
+  "reformas": {
+    "id": "reformas",
+    "text": "Tu gabinete presenta un paquete de reformas estructurales. El parlamento está dividido y la población atenta.",
+    "background": "parliament_night.jpg",
+    "choices": [
+      {
+        "text": "Aprobar reformas sociales que fortalezcan derechos laborales y civiles.",
+        "next": "evaluacion_final",
+        "effects": { "derechos": 5, "popularidad": 3, "economia": -1, "estabilidad": 1 }
+      },
+      {
+        "text": "Aprobar reformas económicas de libre mercado.",
+        "next": "evaluacion_final",
+        "effects": { "derechos": -1, "popularidad": 2, "economia": 4, "estabilidad": 2 }
+      },
+      {
+        "text": "Consolidar poder mediante una reforma constitucional.",
+        "next": "evaluacion_final",
+        "effects": { "derechos": -5, "popularidad": 1, "economia": 1, "estabilidad": 4 }
+      }
+    ]
+  },
+  "evaluacion_final": {
+    "id": "evaluacion_final",
+    "text": "Han pasado cuatro años de gobierno. La nación observa los resultados de las decisiones de {lider}.",
+    "background": "palace_dawn.jpg",
+    "choices": [
+      {
+        "text": "Evaluar resultado final",
+        "next": "final",
+        "effects": { "derechos": 0, "popularidad": 0, "economia": 0, "estabilidad": 0 }
+      }
+    ]
+  },
+  "final": {
+    "id": "final",
+    "text": "Fin del mandato. Según tus decisiones, {pais} puede ser una democracia sólida, un estado autoritario o una nación en ruinas.",
+    "background": "country_view.jpg",
+    "endings": [
+      {
+        "condition": "derechos > 5 && economia > 3",
+        "result": "{pais} se consolida como un referente regional en prosperidad y justicia. El pueblo celebra el legado de {lider}.",
+        "background": "celebration.jpg"
+      },
+      {
+        "condition": "derechos >= 10 && economia >= 0",
+        "result": "El país prospera en justicia y libertad. {lider} es recordado como un defensor de los derechos humanos.",
+        "background": "city_sunrise.jpg"
+      },
+      {
+        "condition": "derechos < 0 && estabilidad > 5",
+        "result": "{pais} se vuelve un régimen autoritario estable, pero el miedo gobierna. Los derechos fueron el precio de la calma.",
+        "background": "palace_dark.jpg"
+      },
+      {
+        "condition": "derechos < 0 && economia < 0",
+        "result": "El país colapsa entre corrupción y desigualdad. {lider} abandona el cargo bajo presión internacional.",
+        "background": "ruins.jpg"
+      },
+      {
+        "condition": "true",
+        "result": "El mandato termina en un equilibrio precario. {pais} sobrevive, pero sin grandes logros ni tragedias. {lider} deja el poder sin gloria ni infamia.",
+        "background": "palace_neutral.jpg"
+      }
+    ]
+  }
+}
